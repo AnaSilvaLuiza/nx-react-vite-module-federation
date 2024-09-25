@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { nxFederation } from '../nx-federation-plugin';
+import { nxFederation } from '../fe-federation-plugin';
 
 export default defineConfig({
   cacheDir: '../node_modules/.vite/remote-1',
@@ -18,10 +18,10 @@ export default defineConfig({
   plugins: [
     react(),
     nxFederation({
-      name: "remote",
+      name: 'remote',
       exposes: {
-        './Module': join(__dirname, './src/remote-entry')
-      }
+        './Module': join(__dirname, './src/remote-entry'),
+      },
     }),
     nxViteTsPaths(),
   ],
@@ -29,7 +29,7 @@ export default defineConfig({
     modulePreload: false,
     target: 'esnext',
     minify: false,
-    cssCodeSplit: false
+    cssCodeSplit: false,
   },
   test: {
     globals: true,

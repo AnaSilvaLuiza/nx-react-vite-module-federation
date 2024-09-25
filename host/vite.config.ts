@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { nxFederation } from '../nx-federation-plugin';
+import { nxFederation } from '../fe-federation-plugin/src';
 
 export default defineConfig({
   cacheDir: '../node_modules/.vite/host',
@@ -18,15 +18,15 @@ export default defineConfig({
     react(),
     nxFederation({
       name: 'host',
-      remotes: ['remote']
+      remotes: ['remote'],
     }),
-    nxViteTsPaths()
+    nxViteTsPaths(),
   ],
   build: {
     modulePreload: false,
     target: 'esnext',
     minify: false,
-    cssCodeSplit: false
+    cssCodeSplit: false,
   },
   test: {
     globals: true,
