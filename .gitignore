@@ -39,3 +39,12 @@ testem.log
 Thumbs.db
 
 .nx/cache
+.nx/workspace-data
+
+
+storybook-static
+build-storybook.log
+libs/storybook-host/stats.html
+/.nx
+/node_modules
+/dist
