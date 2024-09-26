@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-
-const Remote = React.lazy(() => import('remote/Module'));
+import Remote from 'remote/Module';
 
 export function App() {
   return (
@@ -30,10 +27,7 @@ export function App() {
               </>
             }
           />
-          <Route
-            path="/remote"
-            element={<Remote/>}
-          />
+          <Route path="/remote" element={<Remote />} />
         </Routes>
       </React.Suspense>
     </div>
