@@ -30,7 +30,14 @@ export default defineConfig({
       exposes: {
         './Module': join(__dirname, './src/remote-entry'),
       },
-      shared: ['react', 'react-dom'],
+      shared: {
+        react: { singleton: true, eager: true },
+        'react-dom': { singleton: true, eager: true },
+        'react-router-dom': { singleton: true, eager: true },
+        '@tanstack/react-query': { singleton: true, eager: true },
+        '@tanstack/react-query-devtools': { singleton: true, eager: true },
+        '@tanstack/eslint-plugin-query': { singleton: true, eager: true },
+      },
     }),
     nxViteTsPaths(),
   ],

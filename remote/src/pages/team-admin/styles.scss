@@ -1,0 +1,85 @@
+$text-color-light: #ffffff;
+$spacing-regular: 1rem;
+$spacing-large: 24px;
+$default-border-radius: 4px;
+
+.teamAdmin {
+  &__content {
+    display: grid;
+    gap: $spacing-large;
+    align-items: flex-start;
+    padding: 2rem;
+    > hr {
+      background: $text-color-light;
+    }
+  }
+
+  &__teams {
+    display: grid;
+    gap: $spacing-regular;
+  }
+
+  &__teamInfo,
+  &__userInfo {
+    display: flex;
+    flex-direction: column;
+
+    p:first-of-type {
+      font-weight: bold;
+    }
+  }
+
+  &__teamItem,
+  &__userItem {
+    display: inline-flex;
+    gap: $spacing-regular;
+    align-items: center;
+  }
+
+  &__chipEnterprise {
+    color: $text-color-light !important;
+    background-color: #ef6c00 !important;
+    border-radius: $default-border-radius !important;
+    & .MuiChip-icon {
+      color: $text-color-light !important;
+    }
+  }
+
+  &__chipFree {
+    background-color: #fbeeee !important;
+    border-radius: $default-border-radius !important;
+  }
+
+  &__tableCell {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  &__userContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__allUsers {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    &__Buttons {
+      display: inline-flex;
+      gap: 1rem;
+    }
+  }
+
+  &__tablePaper {
+    width: 100%;
+    overflow: hidden;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  &__tableContainer {
+    max-height: 440px;
+  }
+}
