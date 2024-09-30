@@ -1,5 +1,5 @@
 import { TableCell, TableRow, Avatar } from '@mui/material';
-import { IContact } from '../../../../pages/team-admin/types/types';
+import { IContact } from '../../types/types';
 
 interface IProps {
   contact: IContact;

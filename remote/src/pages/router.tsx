@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../app/app';
-import TeamAdmin from './team-admin/team-admin';
+import TeamAdmin from '../components/team-admin/team-admin';
 
 const router = createBrowserRouter([
   {

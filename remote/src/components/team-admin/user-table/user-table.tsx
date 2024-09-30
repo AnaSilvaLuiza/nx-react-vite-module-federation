@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import TableHeader from './header/header';
 import { TableRowComponent } from './row/row';
-import { IContact } from '../../../pages/team-admin/types/types';
+import { IContact } from '../types/types';
 
 interface IProps {
   contactsSearch: IContact[];

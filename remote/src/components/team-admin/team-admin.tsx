@@ -10,12 +10,13 @@ import {
   TableRow,
   TextField,
 } from '@mui/material';
-import { IContactsSearchResponse } from '../../pages/team-admin/types/types';
+import { IContactsSearchResponse } from './types/types';
 import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useData } from '../../services/services';
 import UsersTable from './user-table/user-table';
 import InviteModal from '../invite-modal/invite-modal';
+import './styles.scss';
 
 export default function TeamAdmin() {
   const usersInvites = [
@@ -55,7 +56,7 @@ export default function TeamAdmin() {
   const [openInviteModal, setOpenInviteModal] = useState(false);
 
   return (
-    <>
+    <div className="teamAdmin__content">
       <Heading variant="h5">Organisation</Heading>
       <div className="teamAdmin__allUsers">
         <TextField
@@ -119,6 +120,6 @@ export default function TeamAdmin() {
         handleOpen={() => setOpenInviteModal(true)}
         open={openInviteModal}
       />
-    </>
+    </div>
   );
 }
