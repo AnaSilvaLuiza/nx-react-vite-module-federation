@@ -17,7 +17,7 @@ import { useData } from '../../services/services';
 import UsersTable from './user-table/user-table';
 import InviteModal from '../invite-modal/invite-modal';
 
-export default function AllUsers() {
+export default function TeamAdmin() {
   const usersInvites = [
     { email: 'email@email.com', status: 'Pending' },
     { email: 'email@email.com', status: 'Pending' },
