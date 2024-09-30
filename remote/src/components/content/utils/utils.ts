@@ -1,6 +1,6 @@
-import Expertunity from '../../assets/expertunity-logo.svg';
-import CRM from '../../assets/CRM-logo.svg';
-import ProductInformation from '../../assets/product-information-logo.svg';
+import Expertunity from '../../../assets/expertunity-logo.svg';
+import CRM from '../../../assets/CRM-logo.svg';
+import ProductInformation from '../../../assets/product-information-logo.svg';
 
 export const getProducts = () => {
   const list = [

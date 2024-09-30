@@ -1,5 +1,5 @@
-import { getProductIcon } from '../../utils/utils';
-import { ISubscription } from '../../types/types';
+import { getProductIcon } from '../utils/utils';
+import { ISubscription } from '../types/types';
 import { useData } from '../../../services/services';
 import ExploreProductsButton from './explore-products-button/explore-products-button';
 
