@@ -10,10 +10,9 @@ import {
   TableRow,
   TextField,
 } from '@mui/material';
-import { IContactsSearchResponse } from './types/types';
 import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useData } from '../../services/services';
+import { getContactsSearch } from '../../services/services';
 import UsersTable from './user-table/user-table';
 import InviteModal from '../invite-modal/invite-modal';
 import './styles.scss';
@@ -35,23 +34,6 @@ export default function TeamAdmin() {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event?.target?.value);
   };
-
-  const query = `query {
-    contactsSearch(SearchText: "${searchText}") {
-      Id
-      First_Name
-      Last_Name
-      Email
-      Photo
-      Job_Title
-    }
-  }`;
-
-  const queryKey = ['contactsSearch', searchText, query];
-
-  const { data } = useData(queryKey, query, searchText) ?? {};
-
-  const { contactsSearch } = (data as IContactsSearchResponse) ?? [];
 
   const [openInviteModal, setOpenInviteModal] = useState(false);
 
@@ -114,7 +96,7 @@ export default function TeamAdmin() {
       </Paper>
       <Divider />
 
-      <UsersTable contactsSearch={contactsSearch} />
+      <UsersTable contactsSearch={getContactsSearch(searchText)} />
       <InviteModal
         handleClose={() => setOpenInviteModal(false)}
         handleOpen={() => setOpenInviteModal(true)}
