@@ -47,7 +47,7 @@ function useData(
 
 export function getContactsSearch(searchText: string) {
   const query = `query {
-    contactsSearch(SearchText: "${searchText}") {
+    contactsSearch(SearchText: ${searchText}) {
       Id
       First_Name
       Last_Name
@@ -66,19 +66,22 @@ export function getContactsSearch(searchText: string) {
   return contactsSearch;
 }
 
-export function getSubscriptionForCompany(companyId: number) {
+export function getSubscriptionForCompany(id: number) {
   const query = `
-  query {
-    subscriptionForCompany(id: "${companyId}") {
-      product {
-        Name
-        ProductSKU
+    query {
+      subscriptionForCompany(id: ${id}) {
+        product {
+          Name
+          ProductSKU
+        }
       }
     }
-  }
-`;
+  `;
+
   const queryKey = ['subscriptionForCompany'];
+
   const { data } = useData(queryKey, query) ?? {};
+
   const subscriptions: ISubscription[] = data?.subscriptionForCompany ?? [];
 
   if (!subscriptions?.length) return null;
